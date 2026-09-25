@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-void: #070b0d;
+  --color-panel: #0c1214;
+  --color-panel-2: #10181b;
+  --color-edge: #1c2a2e;
+  --color-mist: #8fa3a8;
+  --color-fog: #c7d4d6;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-void text-fog antialiased;
+    font-family: var(--font-sans);
+    margin: 0;
+    min-width: 320px;
+    background-image:
+      radial-gradient(1200px 500px at 50% -10%, rgba(52, 211, 153, 0.08), transparent 60%),
+      radial-gradient(900px 420px at 90% 20%, rgba(34, 211, 238, 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  a[href],
+  input[type="checkbox"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  ::selection {
+    background: rgba(52, 211, 153, 0.28);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.18em] uppercase text-emerald-400;
+  }
+  .hero {
+    @apply font-bold tracking-tight leading-[1.04];
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    letter-spacing: -0.03em;
+  }
+  .hero-sub {
+    @apply text-[15px] leading-relaxed text-mist max-w-2xl;
+  }
+  .card {
+    @apply rounded-2xl border border-edge bg-panel/80 backdrop-blur;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-edge bg-panel-2 px-3 py-1 text-xs font-medium text-mist;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-400 px-4 py-2.5 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-300 active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-edge bg-panel-2 px-4 py-2.5 text-sm font-medium text-fog transition hover:border-emerald-400/40 hover:text-white active:scale-[0.98];
+  }
+  .code-block {
+    font-family: var(--font-mono);
+    @apply rounded-lg border border-edge bg-void/70 px-2.5 py-2 text-xs leading-relaxed text-fog/90 overflow-x-auto whitespace-pre;
+  }
+}
+
+/* subtle scanline shimmer for the gauge */
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(220%); }
+}
+.animate-sweep {
+  animation: sweep 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
