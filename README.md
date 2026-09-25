@@ -42,6 +42,10 @@ pnpm build    # outputs to dist/public
 - **lucide-react** icons
 - Zero backend — static build deployed to GitHub Pages
 
+## 📸 Screenshots
+
+![SkillBadge SKILL.md security scanner](screenshots/demo.png)
+
 ## ⚠️ A note on heuristics
 
 SkillBadge detects *patterns*, not *intent*. A flagged skill isn't automatically malicious (a DevOps skill may legitimately use `curl`), and a clean scan isn't a guarantee of safety. Always review flagged findings manually before installing a skill you don't fully trust.
