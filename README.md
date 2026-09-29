@@ -31,7 +31,7 @@
 
 ```bash
 pnpm install
-pnpm dev      # http://localhost:5173/skillbadge/
+pnpm dev      # http://localhost:5173
 pnpm build    # outputs to dist/public
 ```
 
