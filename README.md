@@ -4,7 +4,7 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-emerald)](LICENSE)
 [![Live demo](https://img.shields.io/badge/demo-live-emerald)](https://devilking7x.github.io/skillbadge/)
-[![100% client-side](https://img.shields.io/badge/client--side-100%25-blue)](#)
+[![100% client-side](https://img.shields.io/badge/client--side-100%25-blue)](#-privacy)
 
 **Is that `SKILL.md` safe to install?** SkillBadge is an in-browser trust scanner for AI agent skills. Paste or drag & drop any `SKILL.md` file and get an instant heuristic security scan — prompt-injection phrases, exfiltration URLs, `curl | bash` pipes, credential harvesting, base64 blobs, obfuscated code, destructive shell commands, hardcoded secrets, and more.
 
@@ -45,6 +45,10 @@ pnpm build    # outputs to dist/public
 ## 📸 Screenshots
 
 ![SkillBadge SKILL.md security scanner](screenshots/demo.png)
+
+## 🔒 Privacy
+
+Everything runs 100% in your browser: scanned files are never uploaded, no servers are contacted, and scan history lives only in your browser's `localStorage`. Clear it anytime from the History tab.
 
 ## ⚠️ A note on heuristics
 
